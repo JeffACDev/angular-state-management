@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss',
+  styleUrls: ['../app.component.scss','./home.component.scss'],
 })
 export class HomeComponent {
   title = 'book-store-app';

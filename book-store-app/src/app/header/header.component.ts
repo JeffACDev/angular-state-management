@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss',
+  styleUrls: ['../app.component.scss', './header.component.scss'],
 })
 export class HeaderComponent {
   constructor(public userService: UserService) {}
