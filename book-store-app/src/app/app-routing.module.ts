@@ -11,16 +11,16 @@ import { SignupComponent } from './components/about/signup/signup.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path:'new', component: ProductNewComponent },
-  { path:'about', component: AboutComponent },
-  { path:'products', component: ProductsComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'signup', component: SignupComponent},
-  { path: '**', redirectTo: '' }
+  { path: 'new', component: ProductNewComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'products', component: ProductsComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

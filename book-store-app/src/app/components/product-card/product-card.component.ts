@@ -3,10 +3,9 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 @Component({
   selector: 'app-product-card',
   templateUrl: './product-card.component.html',
-  styleUrls: ['./product-card.component.css']
+  styleUrls: ['./product-card.component.css'],
 })
 export class ProductCardComponent {
-
   @Input() product: any;
   @Output() orderProduct = new EventEmitter<any>();
   @Output() removeProduct = new EventEmitter<number>();
@@ -15,7 +14,7 @@ export class ProductCardComponent {
     this.orderProduct.emit(this.product);
   }
 
-  removeProductClick(id:number){
+  removeProductClick(id: number) {
     this.removeProduct.emit(id);
   }
 
@@ -39,6 +38,4 @@ export class ProductCardComponent {
         return 'badge';
     }
   }
-  
-
 }

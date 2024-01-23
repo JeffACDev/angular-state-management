@@ -3,10 +3,10 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProductService {
-  private _baseUrl = 'https://fakestoreapi.com'
+  private _baseUrl = 'https://fakestoreapi.com';
 
   constructor(private http: HttpClient) {}
 
@@ -15,7 +15,7 @@ export class ProductService {
   }
 
   getProductById(id: number): Observable<any> {
-      return this.http.get<any>(`${this._baseUrl}/products/${id}`);
+    return this.http.get<any>(`${this._baseUrl}/products/${id}`);
   }
 
   addProduct(product: any): Observable<any> {
@@ -23,12 +23,13 @@ export class ProductService {
   }
 
   updateProduct(product: any): Observable<any> {
-    return this.http.put<any>(`${this._baseUrl}/products/${product.id}`, product);
+    return this.http.put<any>(
+      `${this._baseUrl}/products/${product.id}`,
+      product
+    );
   }
 
   removeProduct(id: number): Observable<any> {
     return this.http.delete<any>(`${this._baseUrl}/products/${id}`);
   }
-
-
 }

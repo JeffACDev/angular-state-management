@@ -27,15 +27,10 @@ import { ProductCardComponent } from './components/product-card/product-card.com
     ProductsComponent,
     LoginComponent,
     SignupComponent,
-    ProductCardComponent
+    ProductCardComponent,
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    AppRoutingModule,
-    FormsModule
-  ],
+  imports: [BrowserModule, HttpClientModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
