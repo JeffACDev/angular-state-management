@@ -9,5 +9,4 @@ import { Component } from '@angular/core';
   styleUrls: ['../app.component.scss','./home.component.scss'],
 })
 export class HomeComponent {
-  title = 'book-store-app';
 }
