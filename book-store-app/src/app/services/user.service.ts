@@ -3,10 +3,10 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class UserService {
-  private _baseUrl = 'https://fakestoreapi.com';
+  private _baseUrl = 'https://fakestoreapi.com'
 
   constructor(private http: HttpClient) {}
 
@@ -15,10 +15,11 @@ export class UserService {
   }
 
   isUserLoggedIn(): boolean {
-    return false;//!!localStorage.getItem('token');
+    return !!localStorage.getItem('token');
   }
 
   logout(): void {
-   // localStorage.removeItem('token');
+    localStorage.removeItem('token');
   }
+
 }
