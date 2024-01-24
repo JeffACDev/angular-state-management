@@ -9,7 +9,6 @@ import { hide, show } from 'src/app/ngrx-state/actions/home.actions';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
-
   show$: Observable<boolean> = new Observable();
 
   constructor(private store: Store<{ home: false }>) {

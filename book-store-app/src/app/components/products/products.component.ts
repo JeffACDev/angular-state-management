@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { ProductService } from '../../services/product.service';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { loadProducts } from 'src/app/ngrx-state/actions/product.actions';
 
 @Component({
   selector: 'app-products',
@@ -8,16 +10,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./products.component.css'],
 })
 export class ProductsComponent {
-  products: any[] = [];
+  products$: Observable<any> | undefined;
   product: any;
 
-  constructor(private productService: ProductService, private router: Router) {}
+  constructor(private store: Store<{ products: any }>, private router: Router) {
+    this.products$ = store.select('products');
+  }
 
   ngOnInit(): void {
-    this.productService.getProducts().subscribe((data) => {
-      this.products = data;
-      console.log('Products: ', this.products);
-    });
+    this.store.dispatch(loadProducts());
   }
 
   orderProductNow(product: any) {
