@@ -1,0 +1,9 @@
+.card{
+    padding-top: 30px;
+    align-items: center;
+}
+
+div.card img {
+    height: auto;
+  width:300px;
+}

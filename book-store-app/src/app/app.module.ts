@@ -15,6 +15,7 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/about/signup/signup.component';
 import { FormsModule } from '@angular/forms';
 import { ProductCardComponent } from './components/product-card/product-card.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ProductCardComponent } from './components/product-card/product-card.com
     LoginComponent,
     SignupComponent,
     ProductCardComponent,
+    ProductDetailsComponent,
   ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule, FormsModule],
   providers: [],
