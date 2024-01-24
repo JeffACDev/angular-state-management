@@ -16,6 +16,9 @@ import { SignupComponent } from './components/about/signup/signup.component';
 import { FormsModule } from '@angular/forms';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { homeReducer } from './ngrx-state/reducers/home.reducer';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,14 @@ import { ProductDetailsComponent } from './components/product-details/product-de
     ProductCardComponent,
     ProductDetailsComponent,
   ],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule, FormsModule],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    FormsModule,
+    StoreModule.forRoot({ home: homeReducer }),
+    EffectsModule.forRoot([]),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
