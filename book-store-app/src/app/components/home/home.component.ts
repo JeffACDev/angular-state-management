@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngxs/store';
+import { Hide, Show } from 'src/app/state-ngxs/actions/home.actions';
 
 @Component({
   selector: 'app-home',
@@ -6,11 +8,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
-  showMore: boolean = false;
-  showMoreBtnTxt: string = 'Show more..';
+  isShowMore$ = this.store.select((state) => state.home);
 
-  toggleShowMore() {
-    this.showMore = !this.showMore;
-    this.showMoreBtnTxt = this.showMore ? 'Show less..' : 'Show more..';
+  constructor(private store: Store) {}
+
+  showMore() {
+    this.store.dispatch(new Show());
+  }
+
+  showLess() {
+    this.store.dispatch(new Hide());
   }
 }

@@ -16,6 +16,9 @@ import { SignupComponent } from './components/about/signup/signup.component';
 import { FormsModule } from '@angular/forms';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { NgxsModule } from '@ngxs/store';
+import { HomeState } from './state-ngxs/state/home.state';
+import { ProductState } from './state-ngxs/state/product.state';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,13 @@ import { ProductDetailsComponent } from './components/product-details/product-de
     ProductCardComponent,
     ProductDetailsComponent,
   ],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule, FormsModule],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    FormsModule,
+    NgxsModule.forRoot([HomeState, ProductState]),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
