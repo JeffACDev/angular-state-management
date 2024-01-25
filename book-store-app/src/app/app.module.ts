@@ -19,6 +19,7 @@ import { ProductDetailsComponent } from './components/product-details/product-de
 import { NgxsModule } from '@ngxs/store';
 import { HomeState } from './state-ngxs/state/home.state';
 import { ProductState } from './state-ngxs/state/product.state';
+import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { ProductState } from './state-ngxs/state/product.state';
     AppRoutingModule,
     FormsModule,
     NgxsModule.forRoot([HomeState, ProductState]),
+    NgxsLoggerPluginModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],
